@@ -1,0 +1,11 @@
+If we open local browser storage and look for information, we can see that we have some data:
+I_am_admin:"68934a3e9455fa72420237eb05902327"
+
+If we put it in crackstation, this is what we get:
+68934a3e9455fa72420237eb05902327	md5	false
+
+This md5 hash is storing false "value". We should try to change it to false ! Lets create a md5 hash storing "true"
+
+b326b5062b2f0e69046810717534cb09 : true
+
+If we change cookie value in our browser and make a request, we get the flag.

