@@ -3,3 +3,7 @@ We can upload jpg extension in file upload page:
 tmp/image.jpg succesfully uploaded.
 
 A great way to exploit such feature would be to upload malicious file containing malicious code. But .jpg is the only extension working.
+
+echo 'bash' > image.jpg
+
+Upload the image and observe network tab. Edit and resend, and change extension from .jpg to .php
