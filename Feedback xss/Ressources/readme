@@ -1,4 +1,6 @@
-Feedback page is a list of item stored in a db. If we can store code inside of them, anyone who make a request to this page will execute our malicious code. Lets try field for xss attack:
+Feedback page is a list of item stored in a db. If we can store code inside of them, 
+anyone who make a request to this page will load our feedback and execute our malicious code. 
+Lets try field for xss attack:
 
 <script>alert(123)</script>
 

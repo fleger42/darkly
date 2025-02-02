@@ -1,6 +1,12 @@
 http://192.168.56.101/?page=survey
 
-The url may be exploitable. Lets try to use the page parameter to navigate where we shouldnt could.
+This url may be exploitable to local file inclusion. Lets try to use the page parameter to navigate where we shouldnt be able to.
+
+http://192.168.56.101/?page=../../
+
+We get "Wrong.." alert as a response, meaning that we are on good track. One common file that is critical to secure is /etc/passwd.
+
+Lets try to access it:
 
 http://192.168.56.101/?page=../../../../../../../../../../etc/passwd
 

